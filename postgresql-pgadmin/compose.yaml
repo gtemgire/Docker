@@ -2,6 +2,7 @@ services:
   postgres:
     container_name: postgres
     image: postgres:16.2
+    #network_mode: "host"
     volumes:
       - C:\GT\Tech\Projects\DB\Postgres:/var/lib/postgresql/data
     environment:
@@ -9,7 +10,7 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PW}
       - POSTGRES_DB=${POSTGRES_DB} #optional (specify default database instead of $POSTGRES_DB)
     ports:
-      - "5432:5432"
+      - "5431:5432"
     restart: always
 
   pgadmin:
